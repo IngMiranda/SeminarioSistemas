@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>referenciasupem</title>
+    <title>Referencias UPEM</title>
     <link rel="stylesheat" href="//cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
 
 </head>
@@ -37,15 +37,15 @@ $result = mysqli_query($conn,$sqlusu);
       
       <thead>          
         <tr>
-        <th scope="col">matricula</th>
+        <th scope="col">Matricula</th>
           <th scope="col">Nombre</th>
-          <th scope="col">apellido_paterno</th>
-          <th scope="col">apellido_materno</th>
-          <th scope="col">contacto</th>
-          <th scope="col">plantel</th>
-          <th scope="col">carrera</th>
-          <th scope="col">beca</th>
-          <th scope="col">acccion</th>							
+          <th scope="col">Apellido paterno</th>
+          <th scope="col">Apellido materno</th>
+          <th scope="col">Contacto</th>
+          <th scope="col">Plantel</th>
+          <th scope="col">Carrera</th>
+          <th scope="col">Beca</th>
+          <th scope="col">Acciòn</th>							
         </tr>
       </thead> 
       <tbody>
