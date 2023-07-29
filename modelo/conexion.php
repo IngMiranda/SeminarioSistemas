@@ -2,9 +2,9 @@
 
 
 $host 	= 'localhost';
-$nom 	= 'id20343477_root';
-$pass 	= 'root123456_AB';
-$db 	= 'id20343477_id20343477_upemreferencias';
+$nom 	= 'root';
+$pass 	= '';
+$db 	= 'upemreferencias';
 
 $conn = mysqli_connect($host, $nom, $pass, $db);
 
