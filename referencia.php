@@ -73,6 +73,49 @@ INNER JOIN beca f ON a.fk_beca=f.id_beca where id_matricula=$id_matricula");
                     ?>
                 </select>
             </div>
+            <div class="mb-3">
+    <label for="Inputclave_concepto" class="form-label">CLAVE DE CONCEPTO</label>
+    <select id="concepto" name="concepto" class="form-label w-20" onchange="actualizarLabel()">
+        <option value="0" required>seleccione</option>
+        <?php
+        $fk_clave_concepto = "SELECT * FROM concepto_pago";
+        $result = mysqli_query($conn, $fk_clave_concepto);
+
+        while ($valor = mysqli_fetch_array($result)) {
+            echo '<option value="' . $valor['id_clave_concepto'] . '">'. $valor['id_clave_concepto'] ." ". $valor['concepto'] ." $". $valor['p_v'] . '</option>';
+        
+        ?>
+    </select>
+    <label id="labelConcepto"></label>
+</div>
+
+<!-- <script>
+    function actualizarLabel() {
+        var selectConcepto = document.getElementById("concepto");
+        var labelConcepto = document.getElementById("labelConcepto");
+        labelConcepto.innerText = selectConcepto.value;
+    }
+</script> -->
+<script>
+    function actualizarLabel() {
+        var selectConcepto = document.getElementById("concepto");
+        var labelConcepto = document.getElementById("labelConcepto");
+        var opcionSeleccionada = selectConcepto.options[selectConcepto.selectedIndex].text;
+        var p_v = opcionSeleccionada.split("$")[1];
+        labelConcepto.innerText = $valor['p_v'];
+    }
+    <?php
+}
+?>
+</script>
+
+            <div class="mb-3">
+                <?php
+                // $fk_clave_concepto = "SELECT * FROM concepto_pago";
+                ?>
+                <label for="example_motor" class="form-label">BECA</label>
+                <input type="text" class="form-control" name="motor" value="<?= $valor['p_v'] ?>" disabled>
+            </div>
             <div class="text-center">
                 <button class="btn-general" type="button" onclick="javascript:window.print()">&#x1f5a8;&#xfe0f Imprimir</button>
                 <a href="index.php" class="btn-general px-40 p-14 " role="button">Regresar</a>
