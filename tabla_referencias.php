@@ -41,7 +41,7 @@ $result = mysqli_query($conn,$sqlusu);
           <th scope="col">Nombre</th>
           <th scope="col">Apellido paterno</th>
           <th scope="col">Apellido materno</th>
-          <th scope="col">Contacto</th>
+          <th scope="col">Correo</th>
           <th scope="col">Plantel</th>
           <th scope="col">Carrera</th>
           <th scope="col">Beca</th>
@@ -81,7 +81,7 @@ $result = mysqli_query($conn,$sqlusu);
 </table>
 </div>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
-  <script src="//cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+  <!-- <script src="//cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script> -->
 </body>
 <!--
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">

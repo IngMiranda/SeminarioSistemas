@@ -69,7 +69,7 @@ header('location: tabla_referencias.php');
 
 <div class="TextoCajas">Apellido Materno</div>
 <input type="text"  name="txt_apellido_m" class="CajaTexto" autocomplete="off" required>
-
+<!--
 <div class="TextoCajas">Número celular</div>
 <input type="text"  name="numero_celular" class="CajaTexto" autocomplete="off" required>
 
@@ -80,14 +80,14 @@ header('location: tabla_referencias.php');
 <input type="email" name="txtcorreo1" class="CajaTexto" autocomplete="off" required>
 
 <div class="TextoCajas">Ingresar contraseña</div>
-<input type="password"  name="txtpassword1" class="CajaTexto" autocomplete="off" required>
-<div class="mt-15">    
+<input type="password"  name="txtpassword1" class="CajaTexto" autocomplete="off" required>-->
+<div class="mt-15">     
             <label for="exampleInputPassword1" class="form-label TextoCajas">Plantel</label></br>
                 <select class="CajaTexto  mt-15" name="txt_plantel1">
                     <option value="0">Seleccione</option>
                         <?php 
-                            $fk_categoria="SELECT id_plantel, nom_plantel FROM plantel";
-                            $result=mysqli_query($conn,$fk_categoria);
+                            $fk_plantel="SELECT id_plantel, nom_plantel FROM plantel";
+                            $result=mysqli_query($conn,$fk_plantel);
                                     
                             while($valor=mysqli_fetch_array($result)){
                                 echo '<option value="'.$valor['id_plantel'].'">'.$valor['nom_plantel'].'</option>';
@@ -95,6 +95,63 @@ header('location: tabla_referencias.php');
                         ?>
                 </select>
     </div>
+    <div class="mt-15">    
+            <label for="exampleInputPassword1" class="form-label TextoCajas">beca</label></br>
+                <select class="CajaTexto  mt-15" name="txt_beca1">
+                    <option value="0">Seleccione</option>
+                        <?php 
+                            $fk_beca="SELECT id_beca, porcentaje_beca FROM beca";
+                            $result=mysqli_query($conn,$fk_beca);
+                                    
+                            while($valor1=mysqli_fetch_array($result)){
+                                echo '<option value="'.$valor1['id_beca'].'">'.$valor1['porcentaje_beca'].'</option>';
+                            }
+                        ?>
+                </select>
+    </div>
+    <div class="mt-15">    
+            <label for="exampleInputPassword1" class="form-label TextoCajas">Modalidad</label></br>
+                <select class="CajaTexto  mt-15" name="txt_modalidad">
+                    <option value="0">Seleccione</option>
+                        <?php 
+                            $fk_modalidad="SELECT id_modalidad, tipo_modalidad FROM modalidad";
+                            $result3=mysqli_query($conn,$fk_modalidad);
+                                    
+                            while($valor3=mysqli_fetch_array($result3)){
+                                echo '<option value="'.$valor3['id_modalidad'].'">'.$valor3['tipo_modalidad'].'</option>';
+                            }
+                        ?>
+                </select>
+    </div>
+    <div class="mt-15">    
+            <label for="exampleInputPassword1" class="form-label TextoCajas">Carrera</label></br>
+                <select class="CajaTexto  mt-15" name="txt_carrera">
+                    <option value="0">Seleccione</option>
+                        <?php 
+                            $fk_carrera="SELECT id_carrera, nombre_carrera FROM carrera";
+                            $result4=mysqli_query($conn,$fk_carrera);
+                                    
+                            while($valor4=mysqli_fetch_array($result4)){
+                                echo '<option value="'.$valor4['id_carrera'].'">'.$valor4['nombre_carrera'].'</option>';
+                            }
+                        ?>
+                </select>
+    </div>
+    <div class="mt-15">    
+            <label for="exampleInputPassword1" class="form-label TextoCajas">Contacto</label></br>
+                <select class="CajaTexto  mt-15" name="txt_contacto">
+                    <option value="0">Seleccione</option>
+                        <?php 
+                            $fk_contacto="SELECT id_contacto,correo, numero_celular, numero_telefono, contraseña, fk_plantel FROM contacto";
+                            $result2=mysqli_query($conn,$fk_contacto);
+                                    
+                            while($valor2=mysqli_fetch_array($result2)){
+                                echo '<option value="'.$valor2['id_contacto'].'">'.$valor2['correo'].$valor2['numero_celular'].$valor2['numero_telefono'].$valor2['contraseña'].$valor2['fk_plantel'].'</option>';
+                            }
+                        ?>
+                </select>
+    </div>
+    
 <div>
 <input type="submit" value="Crea nueva cuenta" class="BtnRegistrar" name="btnregistrar">
 </div>
